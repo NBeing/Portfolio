@@ -1,0 +1,60 @@
+// _section.scss
+
+.section {
+
+    @include mobile {
+        font-size: 0.6em;
+    }
+
+    .chapter-title{
+        text-align: center;
+        color: white;
+        background-color: $tertiary-color;
+        font-weight: 700;
+        margin: 0px;
+        text-transform: capitalize;
+    }
+
+    .section-text {
+        margin-top: 1em;
+        background-color: white;
+        line-height: 1.6em;
+        border: 1px solid grey;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
+        &.hegel {
+            margin-top: 0px;
+        }
+
+        p {
+            padding: 2em 3em;
+            font-family: $font-stack;
+            letter-spacing: .01rem;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 1.5em;
+            line-height: 1.58;
+            letter-spacing: -.003em;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            -moz-font-feature-settings: "liga" on;
+            color: rgba(0,0,0,.8);
+            text-align: left;
+        }
+        .findlay-analysis, .hegel-text{
+            display: block;
+            align-items: center;
+            text-align: right;
+            font-size: 2em;
+            color: white;
+            font-weight: bolder;
+            font-family: $font-stack-sans;
+            background-color: $tertiary-color;
+            padding: 1.25em;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        }
+    }
+    .section-number {
+        float: left;
+    }
+}

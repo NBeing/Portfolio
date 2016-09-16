@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- generic unused meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <!-- application title -->
+    <title>AngularJS SocketCluster Client Example</title>
+  </head>
+  <body ng-app="example.app">
+    <p>Open Console To View Output</p>
+
+    <!-- example js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular.js"></script>
+    <script src="./release/socket.js"></script>
+    <script type="text/javascript">
+      /**
+       * @description
+       * Example app module declaration.
+       */
+      angular
+        .module('example.app', [
+          'sbb.components'
+        ])
+        .run([
+          '$rootScope',
+          '$log',
+          '$timeout',
+          'sbb.components.socket',
+          Bootstrap
+        ])
+
+      /**
+       * @name Bootstrap
+       * @description
+       * This function will bootstrap the application as needed.
+       * @param {angular.$rootScope} $rootScope
+       * @param {angular.$log} $log
+       * @param {angular.$timeout} $timeout
+       * @param {sbb.components.socket} SocketInterface
+       */
+      function Bootstrap($rootScope, $log, $timeout, SocketInterface) {
+        // Enable Socket Debugging
+        SocketInterface.toggleDebugging(true);
+
+        // Set a placeholder for the random channel
+        channel = 'live-meeting-1234567890';
+
+        // Connect to the socket
+        SocketInterface
+          .connect()
+          .then(function() {
+            
+            // Subscribe to the channel
+            SocketInterface
+              .subscribe(channel)
+              .then(function() {
+
+                // Set up a listener for the dummy published event.
+                $rootScope.$on('socket:meeting:current-state', function(e, eventData) {
+                  // Do something here...
+                });
+
+                // Publish some data to the channel
+                SocketInterface
+                  .publish(channel, {
+                    $applications: ['live-meeting'],
+                    $event: 'meeting:current-state',
+                    $user: {
+                      name: 'Tester',
+                      invitation: '1234567890'
+                    },
+                    data: {}  
+                  })
+                  .then(function() {
+                    
+                    // Disconnect from the socket
+                    $timeout(function() {
+                      SocketInterface
+                        .disconnect()
+                        .then(function() {});
+                    }, 5000)
+                  })
+              })
+          })
+          .catch(function (err) {
+            console.log(err)
+          });
+      }
+    </script>
+  </body>
+</html>

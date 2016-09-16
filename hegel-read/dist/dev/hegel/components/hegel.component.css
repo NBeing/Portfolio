@@ -1,0 +1,128 @@
+div{
+    font-size: 1em;
+}
+
+div.card{
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-align: column;
+    border: 1px solid black;
+    border-radius: 5em;
+    padding: 3em;
+    height: 25em;
+    width: 17.5em;
+    margin: 10em;
+}
+.fright{align-right: right}
+.fleft{-webkit-align-self: left;-ms-flex-item-align: left;align-self: left}
+div.wrapp{
+    height: 100vh;
+    width: 100vw;
+}
+div.wiki-wrap{
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-align: row;
+}
+ul.terms {
+    padding: 0em;
+    margin:0em;
+}
+ul.terms > li{
+    list-style-type: none;
+    margin-right: 0em;
+    margin-top:0em;
+    font-size: 0.8em;
+    display:inline-block;
+    padding: 1em;
+    box-sizing: border-box;
+}
+ul.prevs > li{
+    list-style-type: none;
+    margin-right: 0em;
+    margin-top:0em;
+    font-size: 0.8em;
+    display:inline-block;
+    padding: 1em;
+    box-sizing: border-box;
+}
+ul.prevs > li:hover{
+    background-color: grey;
+    color: white;
+    box-sizing: border-box;
+}
+ul.terms > li:hover{
+    background-color: grey;
+    color: white;
+    box-sizing: border-box;
+}
+
+div.term-wrap{
+    overflow: scroll;
+    border: 1px solid black;
+
+}
+div.wiki-block{
+    width: 70%;
+    height: 70vh;
+    overflow: scroll;
+    margin-top: 0px !important;
+    border: 1px solid black;
+    padding: 10px;
+
+}
+div.dictionary{
+    width: 25%;
+    height: 50vh;
+}
+div.definitions{
+    clear: both;
+    overflow-x:scroll;
+    max-height:25vh;
+}
+div.glossary{
+    clear: both;
+    height:25vh;
+    max-height:25vh;
+    overflow: scroll;
+    display: block;
+}
+div.searchBox{
+    display: block;
+    width: 100%;
+    height: 40px;
+}
+input.searchinput{
+    width: 100%;
+}
+div.syn-wrap{
+    overflow: scroll;
+    height: 15vh;
+}
+ul.syn-entries{
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 0px;
+    padding: 0px;
+}
+div.link-list{
+    width: 15%;
+    height: 70vh;
+    overflow:scroll;
+}
+div.link-list > ul > li {
+    list-style-type: none;
+    padding:0.5em;
+    margin: 0px;
+
+}
+div.link-list > ul > li:hover {
+    background-color: grey;
+    color: white;
+}

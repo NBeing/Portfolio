@@ -1,0 +1,32 @@
+// _headings.scss
+
+h1, h2 {
+    font-family: $font-stack-sans;
+    letter-spacing: .02em;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.58;
+    letter-spacing: .01em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -moz-font-feature-settings: "liga" on;
+    padding: 0.75em;
+}
+
+.book-title {
+    text-align: center;
+    font-size: 3.5em;
+    font-family: $font-stack;
+    color: $secondary-color;
+    font-weight: 900;
+    font-style: italic;
+    padding: 0.25em;
+    border-bottom: 2px solid $secondary-color;
+    margin: 0em;
+    color: $secondary-color;
+    padding: 1em;
+
+    @include mobile{
+        font-size: 2em
+    }
+}

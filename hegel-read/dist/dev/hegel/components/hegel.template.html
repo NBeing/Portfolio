@@ -1,0 +1,68 @@
+<div  class="wrapp">
+    <input [(ngModel)]="index" type="number" ><button type="submit" (click)="getInd(index)">Get it</button>
+    <button type="submit" (click)="increment(1)">Next</button>
+    <button type="submit" (click)="increment(-1)">Previous</button>
+    <input [(ngModel)]="wikiword" ><button type="submit" (click)="getTerm(wikiword)">Load Term</button>
+    <br>
+    <br>
+    <span *ngFor="#word of hegel" (click)="getTerm(word)"> {{word}} </span>
+    <br>
+    <br>
+    <div>
+        <div class="term-wrap" >
+            <ul class="prevs">
+                <li class="prevs" *ngFor="#prev of previous">{{prev.word}}</li>
+            </ul>
+        </div>
+    </div>
+
+    <div *ngIf="!dis">
+        <div class="term-wrap" >
+            <!-- <div class="searchBox">
+                 <input class="searchinput" [(ngModel)]="searchTerm">
+                 </div> -->
+
+            <ul class="terms">
+                <li class="term" *ngFor="#term of terms | search:searchTerm:term" (click)="getTerm(term)">{{term}}</li>
+            </ul>
+        </div>
+    </div>
+    <div class="wiki-wrap">
+        <div class="link-list">
+            <div class="searchBox">
+                <input class="searchinput" [(ngModel)]="searchTerm">
+            </div>
+            <ul>
+                <li class="links" *ngFor="#link of links | search:searchTerm:link">{{link}}</li>
+            </ul>
+        </div>
+
+        <div class="wiki-block" (click)="handleLink($event); false" [innerHTML]="wiki" style="margin-top: 50px"></div>
+
+        <div class="dictionary" *ngIf="dictionaries.info.length > 0">
+            <div class="searchBox">
+                <input class="searchinput" [(ngModel)]="searchTerm">
+            </div>
+            <div class="wordnet">
+                <div class="definitions">
+                    <ul>
+                        <li *ngFor="#def of defs | search:searchTerm:def"> SYN: {{def}}</li>
+                    </ul>
+                </div>
+                <div class ="glossary">
+                    <ul>
+                        <li *ngFor="#gloss of glosses | search:searchTerm:gloss">Gloss: {{gloss}}</li>
+                    </ul>
+                </div>
+
+                <div *ngIf="dictionaries" class="syn-wrap">
+                    <div class="dict-block" *ngFor="#dict of dictionaries.info" >
+                        <ul class="syn-entries">
+                            <li class="syn" *ngFor="#syn of dict.synonyms | search:searchTerm:syn">{{syn}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

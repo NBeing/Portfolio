@@ -1,0 +1,27 @@
+{
+  "name": "socketcluster-client",
+  "main": "socketcluster.js",
+  "version": "4.3.14",
+  "homepage": "https://github.com/SocketCluster/socketcluster-client",
+  "description": "SocketCluster JavaScript client",
+  "authors": [
+    "Jonathan Gros-Dubois <grosjona@yahoo.com.au>"
+  ],
+  "ignore": [
+    "**/.*",
+    "index.js",
+    "bower_components",
+    "lib",
+    "node_modules",
+    "package.json"
+  ],
+  "_release": "4.3.14",
+  "_resolution": {
+    "type": "version",
+    "tag": "v4.3.14",
+    "commit": "ef753802b580e49b30226c44c0a5b6d77d9a9ef0"
+  },
+  "_source": "https://github.com/SocketCluster/socketcluster-client.git",
+  "_target": "^4.3.6",
+  "_originalSource": "socketcluster-client"
+}

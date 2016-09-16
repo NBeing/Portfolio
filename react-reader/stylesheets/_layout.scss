@@ -1,0 +1,14 @@
+// _layout.scss
+
+.container {
+    width: 100%;
+    min-height: 100%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+html,body {
+    background-color: $primary-color;
+    margin-top: 0em;
+    padding-top: 0em;
+ }

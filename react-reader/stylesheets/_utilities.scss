@@ -1,0 +1,49 @@
+// _utilities.scss
+
+.hidden{
+    display: none;
+}
+
+$font-stack: medium-content-serif-font,Georgia,Cambria,"Times New Roman",Times,serif;
+$font-stack-sans: "Lato", medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
+
+$primary-color: gainsboro;
+$secondary-color: darkslategray;
+$tertiary-color: lightslategray;
+
+$desktop-width: 1024px;
+$tablet-width: 768px;
+
+@mixin vendor-prefix($name, $argument) {
+  -webkit-#{$name}: #{$argument};
+  -ms-#{$name}: #{$argument};
+  -moz-#{$name}: #{$argument};
+  -moz-osx-#{$name}: #{$argument};
+  -o-#{$name}: #{$argument};
+  #{$name}: #{$argument};
+}
+
+@mixin mobile {
+  @media (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

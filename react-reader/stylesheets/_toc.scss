@@ -1,0 +1,104 @@
+// _toc.scss
+
+#toc {
+
+    @include mobile {
+        font-size: 0.7em;
+    }
+
+    .toc {
+        font-size: 3em;
+        text-align: center;
+        font-family: $font-stack-sans;
+        font-weight: 900;
+        text-transform: uppercase;
+        color: $secondary-color;
+    }
+
+    .top-chapter, .sub-chapter {
+        margin: 0em 0em 2em 2em;
+
+        @include mobile {
+            margin: auto auto 0.5em 0em;
+        }
+
+        h1 {
+            border-bottom-left-radius: 0.25em;
+            padding-left: 1.5em;
+            border: 3px solid black;
+            @include mobile {
+                border-bottom-left-radius: 0em;
+            }
+        }
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            flex-flow: row wrap;
+            justify-content: flex-start;
+            
+            margin-left: 2em;
+            padding: 1em;
+
+            background-color: snow;
+
+            border: 2px solid darkslategrey;
+            border-top: none;
+            border-bottom-left-radius: 0.25em;
+
+
+            li {
+                list-style-type: none;
+
+                .toc-link {
+                    padding: .5em 1em;
+
+                    font-size: 1.2em;
+                    font-weight: bolder;
+                    color: black;
+                    text-decoration: none;
+                    @include mobile {
+                        font-size: 2em;
+                    }
+                }
+            }
+        }   
+    }
+
+    .chapter {
+        margin-bottom: 0.5em;
+
+        @include mobile {
+            margin: auto auto 0.5em 0em;
+        }
+
+        h1 {
+            margin-bottom: 0em;
+        }
+        .top-chapter {
+            h1 {
+                background-color: $secondary-color;
+                text-align: left;
+                color: white;
+            }
+        }    
+        
+        .sub-chapter{
+            margin: auto auto 0.5em 4em;
+            padding-bottom: 1em;
+
+            h1 {
+                background-color: $tertiary-color;
+                color: white;
+            }
+
+            .sub-chapter {
+                h1 {
+                    color: $secondary-color;
+                    background-color: white;
+                }
+            }            
+        }
+    }
+}
+
