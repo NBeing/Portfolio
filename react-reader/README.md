@@ -1,13 +1,15 @@
-# A Complete Intro to React
+This example is a frontend for my Hegel-serve scraper / API. It allows you to read Hegel's phenomenology along with Findlay's famous notes on the text.
 
-Welcome to a complete intro to React! The site actual workshop material for this repo can be found [here][gh-page]. On the master branch you will find the completed project. On the start branch you will find the barebones boilerplater of the project designed to help you get started.
+It is based on my taking of Brian Holt's react course.
 
-## Contributing
+This program depends on having my Hegel serve backend running (https://github.com/BornPosthumous/Portfolio/tree/master/Hegel-serve)
+To begin run `webpack-dev-server` after installing dependencies, and navigate to http://localhost:8080/#/
 
-Please contribute, file issues, and make PRs. More than anything I'm sure there are typos abounding.
+This project is meant to show that I can write react with the redux library (with thunks!) as well as create a clean and responsive UX.
 
-## License
+The app should be pretty straight forward. Click a section on the table of contents to go to that section. One may press the left or right keys in order to browse the next and previous section. You may also press 'f' to hide or show the Findlay analysis.
 
-MIT
+Inspect the console to see redux logging.
+I still must write tests for this application!
 
-[gh-page]: http://btholt.github.io/complete-intro-to-react/
+If I were to write this program again I would not use thunks and instead use the Saga middleware, which seems to handle asynchronicity much more cleanly. 
